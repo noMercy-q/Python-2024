@@ -1,0 +1,267 @@
+Проверка работы дз 1.1
+1. С переданным файлом
+
+unicorn@rainbow:~/master-degree/python/hw_1$ nl -b a ./artifacts/test_file_1.txt 
+     1  Test string 1
+     2  Test string 2
+     3  Test string 3
+     4  Test string 4
+     5  Test string 5
+     6  Test string 6
+     7  Test string 7
+     8  Test string 8
+     9  Test string 9
+    10  Test string 10
+    11  Test string 11
+    12  Test string 12
+    13  Test string 13
+    14  Test string 14
+    15  Test string 15
+    16  Test string 16
+    17  Test string 17
+    18  Test string 18
+unicorn@rainbow:~/master-degree/python/hw_1$ python3 hw_1_1.py ./artifacts/test_file_1.txt 
+     1  Test string 1
+     2  Test string 2
+     3  Test string 3
+     4  Test string 4
+     5  Test string 5
+     6  Test string 6
+     7  Test string 7
+     8  Test string 8
+     9  Test string 9
+    10  Test string 10
+    11  Test string 11
+    12  Test string 12
+    13  Test string 13
+    14  Test string 14
+    15  Test string 15
+    16  Test string 16
+    17  Test string 17
+    18  Test string 18
+
+2. С stdin
+
+unicorn@rainbow:~/master-degree/python/hw_1$ nl -b a 
+test
+     1  test
+sample
+     2  sample
+example
+     3  example
+^C
+unicorn@rainbow:~/master-degree/python/hw_1$ python3 hw_1_1.py 
+test
+     1  test
+sample
+     2  sample
+example
+     3  example
+^C
+
+Проверка работы дз 1.2
+1. С одним файлом
+
+unicorn@rainbow:~/master-degree/python/hw_1$ tail ./artifacts/test_file_1.txt 
+Test string 9
+Test string 10
+Test string 11
+Test string 12
+Test string 13
+Test string 14
+Test string 15
+Test string 16
+Test string 17
+Test string 18
+unicorn@rainbow:~/master-degree/python/hw_1$ python3 hw_1_2.py ./artifacts/test_file_1.txt 
+Test string 9
+Test string 10
+Test string 11
+Test string 12
+Test string 13
+Test string 14
+Test string 15
+Test string 16
+Test string 17
+Test string 18
+
+2. С несколькими файлами
+
+unicorn@rainbow:~/master-degree/python/hw_1$ tail ./artifacts/test_file_1.txt ./artifacts/test_file_2.txt 
+==> ./artifacts/test_file_1.txt <==
+Test string 9
+Test string 10
+Test string 11
+Test string 12
+Test string 13
+Test string 14
+Test string 15
+Test string 16
+Test string 17
+Test string 18
+
+==> ./artifacts/test_file_2.txt <==
+they had an upright posture, with their legs perpendicular to the body instead
+of to their sides.
+Why did dinosaurs disappear? There are different possible explanations for
+the sudden massive disappearance of the dinosaurs, which took place in the
+late Mesozoic era, 66 million years ago. At that moment 75% of life on the
+planet was suddenly lost, in what is known as the Cretaceous-Tertiary (or KT)
+mass extinction event. The hypotheses handled by the scientists point to
+some type of global climate catastrophe, the product of a sudden and intense
+seismic and volcanic activity, or consequence of the impact of an asteroid
+or meteor in the region that we know today as the Yucatan peninsula, in Mexico.
+unicorn@rainbow:~/master-degree/python/hw_1$ python3 hw_1_2.py ./artifacts/test_file_1.txt ./artifacts/test_file_2.txt 
+==> ./artifacts/test_file_1.txt <==
+Test string 9
+Test string 10
+Test string 11
+Test string 12
+Test string 13
+Test string 14
+Test string 15
+Test string 16
+Test string 17
+Test string 18
+
+==> ./artifacts/test_file_2.txt <==
+they had an upright posture, with their legs perpendicular to the body instead
+of to their sides.
+Why did dinosaurs disappear? There are different possible explanations for
+the sudden massive disappearance of the dinosaurs, which took place in the
+late Mesozoic era, 66 million years ago. At that moment 75% of life on the
+planet was suddenly lost, in what is known as the Cretaceous-Tertiary (or KT)
+mass extinction event. The hypotheses handled by the scientists point to
+some type of global climate catastrophe, the product of a sudden and intense
+seismic and volcanic activity, or consequence of the impact of an asteroid
+or meteor in the region that we know today as the Yucatan peninsula, in Mexico.
+
+3. С stdin
+
+unicorn@rainbow:~/master-degree/python/hw_1$ tail -n 17
+test1
+test2
+test3
+test4
+test5
+test6
+test7
+test8
+test9
+test10
+test11
+test12
+test13
+test14
+test15
+test16
+test17
+test18
+
+test3
+test4
+test5
+test6
+test7
+test8
+test9
+test10
+test11
+test12
+test13
+test14
+test15
+test16
+test17
+test18
+
+unicorn@rainbow:~/master-degree/python/hw_1$ python3 hw_1_2.py 
+test1
+test2
+test3
+test4
+test5
+test6
+test7
+test8
+test9
+test10
+test11
+test12
+test13
+test14
+test15
+test16
+test17
+test18
+
+test3
+test4
+test5
+test6
+test7
+test8
+test9
+test10
+test11
+test12
+test13
+test14
+test15
+test16
+test17
+test18
+
+Проверка работы дз 1.3
+1. С одним файлом
+
+unicorn@rainbow:~/master-degree/python/hw_1$ wc ./artifacts/test_file_1.txt 
+ 18  54 261 ./artifacts/test_file_1.txt
+unicorn@rainbow:~/master-degree/python/hw_1$ python3 hw_1_3.py ./artifacts/test_file_1.txt 
+ 18  54 261 ./artifacts/test_file_1.txt
+
+2. С несколькими файлами
+
+unicorn@rainbow:~/master-degree/python/hw_1$ wc ./artifacts/test_file_1.txt ./artifacts/test_file_2.txt 
+   18    54   261 ./artifacts/test_file_1.txt
+  242  2805 17138 ./artifacts/test_file_2.txt
+  260  2859 17399 total
+unicorn@rainbow:~/master-degree/python/hw_1$ python3 hw_1_3.py ./artifacts/test_file_1.txt ./artifacts/test_file_2.txt 
+   18    54   261 ./artifacts/test_file_1.txt
+  242  2805 17138 ./artifacts/test_file_2.txt
+  260  2859 17399 total
+
+3. С stdin
+
+unicorn@rainbow:~/master-degree/python/hw_1$ wc 
+Dinosaurs were a large and varied group of prehistoric reptiles
+that dominated the Earth millions of years ago, long before humans
+were even about to appear. These animals populated all the habitats
+on the planet: the oceans, the mainland and even crossed the air,
+throughout 135 million years, from their appearance in the Upper
+Triassic period until their extinction at the end of the Cretaceous period
+What were dinosaurs like? Dinosaurs were a very large and diverse group of
+animals, of which Today we know more than a thousand different species,
+from all corners of the planet. Some walked on two or four legs, were
+herbivores, piscivores, omnivores or carnivores, and competed with other
+species of prehistoric marine and even flying reptiles. Like modern reptiles,
+dinosaurs laid eggs and probably created nests; but unlike them, the dinosaurs
+they had an upright posture, with their legs perpendicular to the body instead
+of to their sides.
+     14     154     950
+unicorn@rainbow:~/master-degree/python/hw_1$ python3 hw_1_3.py 
+Dinosaurs were a large and varied group of prehistoric reptiles
+that dominated the Earth millions of years ago, long before humans
+were even about to appear. These animals populated all the habitats
+on the planet: the oceans, the mainland and even crossed the air,
+throughout 135 million years, from their appearance in the Upper
+Triassic period until their extinction at the end of the Cretaceous period
+What were dinosaurs like? Dinosaurs were a very large and diverse group of
+animals, of which Today we know more than a thousand different species,
+from all corners of the planet. Some walked on two or four legs, were
+herbivores, piscivores, omnivores or carnivores, and competed with other
+species of prehistoric marine and even flying reptiles. Like modern reptiles,
+dinosaurs laid eggs and probably created nests; but unlike them, the dinosaurs
+they had an upright posture, with their legs perpendicular to the body instead
+of to their sides.
+     14     154     950
